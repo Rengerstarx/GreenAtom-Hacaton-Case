@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "785899938629",
+    "firebase_url": "https://greenatom-base-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "greenatom-base",
+    "storage_bucket": "greenatom-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785899938629:android:9f2634b896e5ad82eed42c",
+        "android_client_info": {
+          "package_name": "com.example.baseprob"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785899938629-4k2f364t9oupk5vj9pcejh2p9rguul4g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.baseprob",
+            "certificate_hash": "647c4c925c0d834f608af00ed0211d9f1d774af3"
+          }
+        },
+        {
+          "client_id": "785899938629-hb8oje9n3blhdkguuf2i58qhan8m7uqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtyiDcCHOzc-1-5dl7pe5qJiKeYKheLuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785899938629-hb8oje9n3blhdkguuf2i58qhan8m7uqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
