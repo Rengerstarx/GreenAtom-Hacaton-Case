@@ -1,14 +1,17 @@
 package com.example.baseprob
 
-
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
+import androidx.annotation.NonNull
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.baseprob.databinding.QuizzItemBinding
+import android.view.animation.Animation
+import android.widget.AdapterView.OnItemClickListener
+import androidx.recyclerview.widget.ListAdapter
 
-class QuizzAdapter(val listener: MainActivity):RecyclerView.Adapter<QuizzAdapter.QuizzHolder> (){
+class QuizzAdapter(val listener: Listener):RecyclerView.Adapter<QuizzAdapter.QuizzHolder> (){
     val quizlist = ArrayList<Quizz>()
     class QuizzHolder(item:View):RecyclerView.ViewHolder(item) {
         val binding = QuizzItemBinding.bind(item)
@@ -29,6 +32,7 @@ class QuizzAdapter(val listener: MainActivity):RecyclerView.Adapter<QuizzAdapter
         holder.bind(quizlist[position], listener )
 
     }
+
 
     override fun getItemCount(): Int {
         return quizlist.size

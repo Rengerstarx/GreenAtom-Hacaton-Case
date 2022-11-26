@@ -1,50 +1,73 @@
 package com.example.baseprob
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EdgeEffect
-import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.example.baseprob.databinding.ActivityMainBinding
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import android.graphics.Bitmap
+import android.provider.MediaStore
+import android.view.View
+import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.constraintlayout.widget.ConstraintLayout
+import java.io.IOException
 
-class AboutUsActivity :AppCompatActivity(){
+class AboutUsActivity :Activity(){
     private lateinit var binding: ActivityMainBinding
+    val GALLERY_REQUEST: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.fragment_about_us)
+        val button: ImageButton = findViewById<Button>(R.id.buttonGH) as ImageButton
+        button.setOnClickListener {
+            val photoPickerIntent = Intent(Intent.ACTION_PICK)
+            photoPickerIntent.type = "image/*"
+            startActivityForResult(photoPickerIntent, GALLERY_REQUEST)
+        }
 
-        binding=ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragmentA(AboutUs())
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.Quiz->replaceFragmentQ(Quiz())
-                R.id.Profile->replaceFragmentP(Profile())
-                R.id.AboutUs->replaceFragmentA(AboutUs())
-                else->{
-                }
-            }
-            true
+    }
+
+    fun show(view: android.view.View){
+        if(findViewById<ConstraintLayout>(R.id.lay).visibility==View.VISIBLE){
+            findViewById<ConstraintLayout>(R.id.lay).visibility=View.INVISIBLE
+        } else {
+            findViewById<ConstraintLayout>(R.id.lay).visibility=View.VISIBLE
         }
     }
 
-    fun replaceFragmentA(fragment: Fragment){
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.BAZA,fragment)
-        fragmentTransaction.commit()
+    override fun onActivityResult(requestCode: Int, resultCode: Int, imageReturnedIntent: Intent) {
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent)
+        var bitmap: Bitmap? = null
+        val imageView = findViewById<View>(R.id.picture) as ImageView
+        when (requestCode) {
+            GALLERY_REQUEST -> if (resultCode == RESULT_OK) {
+                val selectedImage = imageReturnedIntent.data
+                try {
+                    bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedImage)
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+
+                imageView.setImageBitmap(bitmap)
+
+                imageView.animate().rotation(90F)
+
+
+            }
+        }
     }
-    fun replaceFragmentQ(fragment: Fragment){
+
+
+    fun replaceFragmentQ(view: android.view.View){
         val myIntent = Intent(this@AboutUsActivity, MainActivity::class.java)
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@AboutUsActivity.startActivity(myIntent)
     }
-    fun replaceFragmentP(fragment: Fragment){
+    fun replaceFragmentP(view: android.view.View){
         val myIntent = Intent(this@AboutUsActivity, ProfileActivity::class.java)
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@AboutUsActivity.startActivity(myIntent)

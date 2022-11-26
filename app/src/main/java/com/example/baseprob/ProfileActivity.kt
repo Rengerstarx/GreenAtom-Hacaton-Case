@@ -35,21 +35,6 @@ class ProfileActivity : AppCompatActivity(){
         setContentView(R.layout.fragment_profile)
 
 
-
-        binding=ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragmentP(Profile())
-        binding.bottomNavigationView.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.Quiz->replaceFragmentQ(Quiz())
-                R.id.Profile->replaceFragmentP(Profile())
-                R.id.AboutUs->replaceFragmentA(AboutUs())
-                else->{
-                }
-            }
-            true
-        }
-
     }
 
     fun click_vk(view: android.view.View) {
@@ -117,21 +102,24 @@ class ProfileActivity : AppCompatActivity(){
         Tx1?.visibility = View.VISIBLE
     }
 
-    fun replaceFragmentP(fragment: Fragment){
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.BAZA,fragment)
-        fragmentTransaction.commit()
-    }
-    fun replaceFragmentQ(fragment: Fragment){
+
+    fun replaceFragmentQ(view: android.view.View){
         val myIntent = Intent(this@ProfileActivity, MainActivity::class.java)
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@ProfileActivity.startActivity(myIntent)
     }
-    fun replaceFragmentA(fragment: Fragment){
-        val myIntent = Intent(this@ProfileActivity, ProfileActivity::class.java)
+    fun replaceFragmentA(view: android.view.View){
+        val myIntent = Intent(this@ProfileActivity, AboutUsActivity::class.java)
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@ProfileActivity.startActivity(myIntent)
+    }
+
+    fun show(view: android.view.View){
+        if(findViewById<ConstraintLayout>(R.id.lay).visibility==View.VISIBLE){
+            findViewById<ConstraintLayout>(R.id.lay).visibility=View.INVISIBLE
+        } else {
+            findViewById<ConstraintLayout>(R.id.lay).visibility=View.VISIBLE
+        }
     }
 
 }
