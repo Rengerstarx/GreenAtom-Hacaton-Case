@@ -3,10 +3,10 @@
     <item android:title="Квизы"
         android:id="@+id/Quiz"
         android:icon="@drawable/ic_icon_quiz"/>
-    <item android:title="О нас"
-        android:id="@+id/AboutUs"
-        android:icon="@drawable/ic_icon_aboutus"/>
     <item android:title="Профиль"
+        android:id="@+id/AboutUs"
+        android:icon="@drawable/ic_icon_profile"/>
+    <item android:title="О нас"
         android:id="@+id/Profile"
-        android:icon="@drawable/ic_icon_profile" />
+        android:icon="@drawable/ic_icon_aboutus" />
 </menu>

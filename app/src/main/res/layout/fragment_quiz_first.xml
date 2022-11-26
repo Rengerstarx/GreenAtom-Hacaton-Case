@@ -4,60 +4,167 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Quiz_first">
+    tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/Ques4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="44dp"
-        android:text="CheckBox"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <ImageView
+            android:id="@+id/picQ"
+            android:layout_width="412dp"
+            android:layout_height="292dp"
+            android:src="@drawable/fon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/Ques3"
+            android:layout_width="188dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="124dp"
+            android:onClick="Cheker"
+            android:text="CheckBox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/Ques2"
+            android:layout_width="188dp"
+            android:layout_height="69dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="36dp"
+            android:onClick="Cheker"
+            android:text="CheckBox"
+            app:layout_constraintBottom_toTopOf="@+id/Ques4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/Ques1"
+            app:layout_constraintTop_toBottomOf="@+id/texQ"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/texQ"
+            android:layout_width="0dp"
+            android:layout_height="157dp"
+            android:layout_marginBottom="184dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:onClick="crate"
+            android:text="next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <CheckBox
+            android:id="@+id/Ques4"
+            android:layout_width="190dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="124dp"
+            android:onClick="Cheker"
+            android:text="CheckBox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Ques3" />
+
+        <CheckBox
+            android:id="@+id/Ques1"
+            android:layout_width="188dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:onClick="Cheker"
+            android:text="CheckBox"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/Ques3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/texQ"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView228"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="0dp"
+        android:layout_height="294dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="Cheker" />
-
-    <CheckBox
-        android:id="@+id/Ques3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="196dp"
-        android:text="CheckBox"
-        android:onClick="Cheker"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/Ques1"
+    <Button
+        android:id="@+id/load"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="84dp"
-        android:text="CheckBox"
+        android:onClick="Load"
+        android:text="Button"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/lay"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/fonn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:onClick="Cheker"/>
-
-    <CheckBox
-        android:id="@+id/Ques2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="44dp"
-        android:text="CheckBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="Cheker"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/gobut1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginBottom="272dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="Load"/>
+        android:layout_marginBottom="352dp"
+        android:onClick="quizPage"
+        android:text="GO"
+        app:layout_constraintBottom_toBottomOf="@+id/fonn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/gobut2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="252dp"
+        android:onClick="quizPage"
+        android:text="GO"
+        app:layout_constraintBottom_toBottomOf="@+id/fonn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
