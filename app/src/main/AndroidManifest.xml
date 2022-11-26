@@ -26,8 +26,13 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".MainActivity" android:exported="true" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".F1Quiz"
             android:exported="true" >
             <meta-data
                 android:name="android.app.lib_name"
@@ -37,6 +42,7 @@
             android:name=".AboutUsActivity"
             android:exported="false"
             android:noHistory="true" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="false"

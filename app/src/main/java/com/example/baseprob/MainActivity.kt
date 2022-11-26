@@ -1,6 +1,7 @@
 package com.example.baseprob
 
 import android.content.Intent
+import android.media.session.MediaSession.QueueItem
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -52,13 +53,15 @@ class MainActivity : AppCompatActivity() {
         this@MainActivity.startActivity(myIntent)
     }
 
-    fun mainka(view: View){
-        supportFragmentManager.beginTransaction().replace(R.id.BAZA, QuizMainPage()).addToBackStack(null).commit()
-        
+    fun mainka(view: android.view.View){
+            supportFragmentManager.beginTransaction().replace(R.id.BAZA, QuizMainPage())
+                .addToBackStack(null).commit()
     }
 
-    fun onClick (view: android.view.View){
-        var database = Firebase.database
-    }
+    fun quizPage(view: android.view.View){
+        val myIntent = Intent(this@MainActivity, F1Quiz::class.java)
+        myIntent.putExtra("key", android.R.attr.value) //Optional parameters
+        this@MainActivity.startActivity(myIntent)    }
+
 
 }

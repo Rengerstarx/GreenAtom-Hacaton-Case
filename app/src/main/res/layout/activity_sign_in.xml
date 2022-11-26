@@ -4,45 +4,225 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn">
-
-
+    tools:context=".SignIn"
+>
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="409dp"
-        android:layout_height="133dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/GreyFon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/fonfull" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="0dp"
+        android:layout_height="172dp"
+        android:layout_marginTop="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/greenlogo" />
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="262dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:srcCompat="@drawable/fon2" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="262dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/fon2" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="234dp"
+        android:layout_height="45dp"
+        android:textColorHighlight="@color/black"
+        android:textColorLink="@color/black"
+        android:textColor="@color/black"
+        android:background="@null"
+        android:textColorHint="@color/black"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="1.0"
+        android:singleLine="true"/>
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="232dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:singleLine="true"
+        android:backgroundTint="@color/black"
+        android:textColorLink="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:text="Войти через Google"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/Google"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        android:id="@+id/login"
+        android:layout_width="94dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="101dp"
+        android:layout_marginBottom="52dp"
+        android:text="Логин"
+        android:textAlignment="center"
+        android:textColor="#003274"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/login2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintTop_toBottomOf="@+id/Logo"
+        app:layout_constraintVertical_bias="0.21" />
+
+    <TextView
+        android:id="@+id/login2"
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="32dp"
+        android:text="Пароль"
+        android:textAlignment="center"
+        android:textColor="#003274"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_in"
+        app:layout_constraintEnd_toStartOf="@+id/imageView8"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_sign_in"
+        android:layout_width="138dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="108dp"
+        android:background="#00FFFFFF"
+        android:onClick="onClickQ"
+        android:scaleType="fitXY"
+
+
+        android:src="@drawable/buttfon"
+        app:layout_constraintBottom_toTopOf="@+id/Google"
+        app:layout_constraintEnd_toStartOf="@+id/btn_registration"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/btn_registration"
+        android:layout_width="138dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="34dp"
+        android:background="#00FFFFFF"
+        android:onClick="onClickQ"
+        android:scaleType="fitXY"
+        android:src="@drawable/buttfon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <ImageButton
         android:id="@+id/Google"
-        android:layout_width="105dp"
-        android:layout_height="107dp"
-        android:layout_marginBottom="28dp"
-        android:backgroundTint="#FFFFFF"
-        android:scaleType="fitStart"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="261dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="108dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/buttfon"
+        app:layout_constraintBottom_toBottomOf="@+id/GreyFon"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/googleg_standard_color_18" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_registration"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
+        android:text="Авторизация"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sign_in"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
+        app:layout_constraintTop_toTopOf="@+id/btn_sign_in"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="91dp"
+        android:layout_height="33dp"
+        android:text="Регистрация"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_registration"
+        app:layout_constraintEnd_toEndOf="@+id/btn_registration"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/btn_registration"
+        app:layout_constraintTop_toTopOf="@+id/btn_registration"
+        app:layout_constraintVertical_bias="0.64" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="119dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="36dp"
+        android:text="Вход через Google"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/Google"
+        app:layout_constraintEnd_toEndOf="@+id/Google"
+        app:layout_constraintTop_toTopOf="@+id/Google"
+        app:layout_constraintVertical_bias="0.423" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Google"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.439"
+        app:layout_constraintStart_toStartOf="@+id/Google"
+        app:layout_constraintTop_toTopOf="@+id/Google"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/googlelogo" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
