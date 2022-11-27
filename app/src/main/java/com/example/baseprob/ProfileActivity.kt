@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.example.baseprob.databinding.ActivityMainBinding
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import android.net.Uri
@@ -17,8 +16,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 
 
 class ProfileActivity : AppCompatActivity(){
-    private lateinit var binding: ActivityMainBinding
-
     var Im1: ImageView? = null
     var Im2: ImageView? = null
     var Tx1: TextView? = null
@@ -113,6 +110,7 @@ class ProfileActivity : AppCompatActivity(){
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@ProfileActivity.startActivity(myIntent)
     }
+
 
     fun show(view: android.view.View){
         if(findViewById<ConstraintLayout>(R.id.lay).visibility==View.VISIBLE){

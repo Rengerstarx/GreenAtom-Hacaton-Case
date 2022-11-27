@@ -13,7 +13,7 @@
         android:layout_height="340dp"
 
 
-        android:background="@drawable/profile"
+        android:background="@drawable/image_1"
         app:civ_border_color="#003274"
         app:civ_border_width="3dp"
 
@@ -26,10 +26,11 @@
 
     <ImageButton
         android:id="@+id/buttonGH"
-        android:layout_width="188dp"
-        android:layout_height="37dp"
+        android:layout_width="249dp"
+        android:layout_height="59dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/but"
+        android:background="@drawable/add_dab"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -129,10 +130,11 @@
 
     <ImageButton
         android:id="@+id/imageButton2"
-        android:layout_width="205dp"
-        android:layout_height="48dp"
+        android:layout_width="230dp"
+        android:layout_height="67dp"
+        android:onClick="createnewUser"
         android:scaleType="centerCrop"
-        android:src="@drawable/sec_but"
+        android:src="@drawable/rrrrrr"
         app:layout_constraintBottom_toTopOf="@+id/buttonGH"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -188,8 +190,12 @@
         android:backgroundTint="#D3D3D3"
         android:onClick="show"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_6" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/group_14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

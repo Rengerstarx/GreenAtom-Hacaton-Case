@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Quizzes">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/lay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         tools:layout_editor_absoluteX="205dp"
         tools:layout_editor_absoluteY="16dp">
 
@@ -18,38 +18,33 @@
             android:id="@+id/picQ"
             android:layout_width="412dp"
             android:layout_height="292dp"
+            android:src="@drawable/fon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/Ques3"
-            android:layout_width="0dp"
+            android:layout_width="188dp"
             android:layout_height="69dp"
+            android:layout_marginStart="16dp"
             android:layout_marginBottom="124dp"
-            android:background="@drawable/niz"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:textColor="#ffffff"
-            android:buttonTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/Ques4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Ques1" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
             android:id="@+id/Ques2"
-            android:layout_width="0dp"
+            android:layout_width="188dp"
             android:layout_height="69dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/vverh"
+            android:layout_marginEnd="36dp"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:buttonTint="@color/white"
-            android:textAlignment="viewStart"
-            android:textColor="#ffffff"
             app:layout_constraintBottom_toTopOf="@+id/Ques4"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/Ques1"
             app:layout_constraintTop_toBottomOf="@+id/texQ"
             app:layout_constraintVertical_bias="1.0" />
@@ -61,7 +56,7 @@
             android:layout_marginBottom="184dp"
             android:text="TextView"
             android:textAlignment="center"
-            android:textSize="15sp"
+            android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -74,39 +69,33 @@
             android:layout_marginBottom="48dp"
             android:onClick="crate"
             android:text="next"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <CheckBox
             android:id="@+id/Ques4"
-            android:layout_width="0dp"
+            android:layout_width="190dp"
             android:layout_height="69dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="124dp"
-            android:background="@drawable/niz"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:textColor="#ffffff"
-            android:buttonTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Ques3" />
 
         <CheckBox
             android:id="@+id/Ques1"
-            android:layout_width="0dp"
+            android:layout_width="188dp"
             android:layout_height="69dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="18dp"
-            android:background="@drawable/vverh"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:buttonTint="@color/white"
             android:textAlignment="textStart"
-            android:textColor="#ffffff"
             app:layout_constraintBottom_toTopOf="@+id/Ques3"
-            app:layout_constraintEnd_toStartOf="@+id/Ques2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/texQ"
             app:layout_constraintVertical_bias="0.0" />
@@ -140,6 +129,42 @@
         android:text="Button"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/lay"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/fonn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/gobut1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="352dp"
+        android:onClick="quizPage"
+        android:text="GO"
+        app:layout_constraintBottom_toBottomOf="@+id/fonn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/gobut2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="252dp"
+        android:onClick="quizPage"
+        android:text="GO"
+        app:layout_constraintBottom_toBottomOf="@+id/fonn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

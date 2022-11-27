@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity(), QuizzAdapter.Listener {
             rsView.layoutManager = LinearLayoutManager(this@MainActivity)
             rsView.adapter = adapter
             for (i in imagemas.indices){
-                val quizz = Quizz(imagemas[i], "quizz $i")
+                val quizz = Quizz(imagemas[i], "quizz $i",i+1)
                 adapter.addquizz(quizz)
             }
             for (i in imagemas.indices){
-                val quizz = Quizz(imagemas[i], "quizz $i")
+                val quizz = Quizz(imagemas[i], "quizz $i",i+1)
                 adapter.addquizz(quizz)
             }
 
@@ -45,8 +45,9 @@ class MainActivity : AppCompatActivity(), QuizzAdapter.Listener {
     }
 
     override fun onClick(quizz: Quizz) {
-
-        Toast.makeText(this,"нажали на ${quizz.title}", Toast.LENGTH_LONG).show()
+        val myIntent = Intent(this@MainActivity, Quizzes::class.java)
+        myIntent.putExtra("key", "Квиз №"+quizz.id.toString()) //Optional parameters
+        this@MainActivity.startActivity(myIntent)
     }
 
 

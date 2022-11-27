@@ -6,17 +6,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.baseprob.databinding.ActivityMainBinding
 import android.graphics.Bitmap
 import android.provider.MediaStore
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import java.io.IOException
 
 class AboutUsActivity :Activity(){
-    private lateinit var binding: ActivityMainBinding
     val GALLERY_REQUEST: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,17 @@ class AboutUsActivity :Activity(){
         } else {
             findViewById<ConstraintLayout>(R.id.lay).visibility=View.VISIBLE
         }
+    }
+
+    fun createnewUser(view: View){
+        val fio=findViewById<EditText>(R.id.textView24).text
+        val birthday=findViewById<EditText>(R.id.textView25).text
+        val how=findViewById<EditText>(R.id.textView26).text
+        val city=findViewById<EditText>(R.id.textView27).text
+        Firebase.database.getReference("Users").child(fio.toString()).child("Birthday").setValue(birthday.toString())
+        Firebase.database.getReference("Users").child(fio.toString()).child("Reasons").setValue(how.toString())
+        Firebase.database.getReference("Users").child(fio.toString()).child("City").setValue(city.toString())
+        val myIntent = Intent(this@AboutUsActivity, MainActivity::class.java)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, imageReturnedIntent: Intent) {
