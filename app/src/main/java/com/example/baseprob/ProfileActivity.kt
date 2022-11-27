@@ -16,7 +16,9 @@ import androidx.constraintlayout.widget.ConstraintLayout
 
 
 class ProfileActivity : AppCompatActivity(){
-    var Im1: ImageView? = null
+
+    var Tx0: TextView? = null
+    var men: ImageButton?=null
     var Im2: ImageView? = null
     var Tx1: TextView? = null
     var Tx2: TextView? = null
@@ -54,7 +56,7 @@ class ProfileActivity : AppCompatActivity(){
     }
 
     fun click_gallery(view: android.view.View) {
-        Im1=findViewById(R.id.text_compnay)
+        Tx0=findViewById(R.id.text_compnay2)
         Im2=findViewById(R.id.rosatom_logo)
         Tx1=findViewById(R.id.text_compnay2)
         Tx2=findViewById(R.id.gmail_addres)
@@ -63,21 +65,24 @@ class ProfileActivity : AppCompatActivity(){
         ImB3=findViewById(R.id.gmailButton)
         ImB4=findViewById(R.id.back_Button)
         ImB5=findViewById(R.id.gallery_button)
+        men=findViewById(R.id.perehod2)
         Scrol=findViewById<ConstraintLayout>(R.id.scroll_Gallery)
+        findViewById<ConstraintLayout>(R.id.lay).visibility=View.INVISIBLE
 
         Scrol?.visibility = View.VISIBLE
         ImB4?.visibility = View.VISIBLE
         ImB3?.visibility = View.INVISIBLE
         ImB2?.visibility = View.INVISIBLE
         ImB1?.visibility = View.INVISIBLE
-        Im1?.visibility = View.INVISIBLE
+        Tx0?.visibility = View.INVISIBLE
         Im2?.visibility = View.INVISIBLE
         ImB5?.visibility = View.INVISIBLE
         Tx1?.visibility = View.INVISIBLE
+        men?.visibility = View.INVISIBLE
     }
 
     fun click_back(view: android.view.View) {
-        Im1=findViewById(R.id.text_compnay)
+        Tx0=findViewById(R.id.text_compnay2)
         Im2=findViewById(R.id.rosatom_logo)
         Tx1=findViewById(R.id.text_compnay2)
         Tx2=findViewById(R.id.gmail_addres)
@@ -87,16 +92,18 @@ class ProfileActivity : AppCompatActivity(){
         ImB4=findViewById(R.id.back_Button)
         ImB5=findViewById(R.id.gallery_button)
         Scrol=findViewById<ConstraintLayout>(R.id.scroll_Gallery)
+        men=findViewById(R.id.perehod2)
 
         Scrol?.visibility = View.INVISIBLE
         ImB4?.visibility = View.INVISIBLE
         ImB3?.visibility = View.VISIBLE
         ImB2?.visibility = View.VISIBLE
         ImB1?.visibility = View.VISIBLE
-        Im1?.visibility = View.VISIBLE
+        Tx0?.visibility = View.VISIBLE
         Im2?.visibility = View.VISIBLE
         ImB5?.visibility = View.VISIBLE
         Tx1?.visibility = View.VISIBLE
+        men?.visibility = View.VISIBLE
     }
 
 
@@ -110,7 +117,6 @@ class ProfileActivity : AppCompatActivity(){
         myIntent.putExtra("key", android.R.attr.value) //Optional parameters
         this@ProfileActivity.startActivity(myIntent)
     }
-
 
     fun show(view: android.view.View){
         if(findViewById<ConstraintLayout>(R.id.lay).visibility==View.VISIBLE){

@@ -24,12 +24,6 @@ class AboutUsActivity :Activity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_about_us)
-        val button: ImageButton = findViewById<Button>(R.id.buttonGH) as ImageButton
-        button.setOnClickListener {
-            val photoPickerIntent = Intent(Intent.ACTION_PICK)
-            photoPickerIntent.type = "image/*"
-            startActivityForResult(photoPickerIntent, GALLERY_REQUEST)
-        }
 
     }
 
@@ -42,36 +36,13 @@ class AboutUsActivity :Activity(){
     }
 
     fun createnewUser(view: View){
-        val fio=findViewById<EditText>(R.id.textView24).text
-        val birthday=findViewById<EditText>(R.id.textView25).text
-        val how=findViewById<EditText>(R.id.textView26).text
-        val city=findViewById<EditText>(R.id.textView27).text
+        val fio=findViewById<EditText>(R.id.textView15).text
+        val birthday=findViewById<EditText>(R.id.textView16).text
+        val how=findViewById<EditText>(R.id.textView17).text
+        val city=findViewById<EditText>(R.id.textView18).text
         Firebase.database.getReference("Users").child(fio.toString()).child("Birthday").setValue(birthday.toString())
         Firebase.database.getReference("Users").child(fio.toString()).child("Reasons").setValue(how.toString())
         Firebase.database.getReference("Users").child(fio.toString()).child("City").setValue(city.toString())
-        val myIntent = Intent(this@AboutUsActivity, MainActivity::class.java)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, imageReturnedIntent: Intent) {
-        super.onActivityResult(requestCode, resultCode, imageReturnedIntent)
-        var bitmap: Bitmap? = null
-        val imageView = findViewById<View>(R.id.picture) as ImageView
-        when (requestCode) {
-            GALLERY_REQUEST -> if (resultCode == RESULT_OK) {
-                val selectedImage = imageReturnedIntent.data
-                try {
-                    bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedImage)
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                }
-
-                imageView.setImageBitmap(bitmap)
-
-                imageView.animate().rotation(90F)
-
-
-            }
-        }
     }
 
 

@@ -6,88 +6,26 @@
     android:id="@+id/constructor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="#D3D3D3"
     android:visibility="visible"
     tools:context=".ProfileActivity">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/lay"
-        android:layout_width="105dp"
-        android:layout_height="252dp"
-        android:background="#00000000"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/qw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:onClick="replaceFragmentQ"
-            android:text="Квиз"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/Prof"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="replaceFragmentA"
-            android:text="Профиль"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qw" />
-
-        <Button
-            android:id="@+id/about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="О нас"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Prof" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageButton
-        android:id="@+id/perehod2"
-        android:layout_width="66dp"
-        android:layout_height="57dp"
-        android:backgroundTint="#00FFFFFF"
-        android:onClick="show"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_14" />
-
-    <ImageView
-        android:id="@+id/text_compnay"
-        android:layout_width="359dp"
-        android:layout_height="274dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginBottom="47dp"
-        android:src="@drawable/info_company"
-        app:layout_constraintBottom_toTopOf="@+id/gallery_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rosatom_logo" />
-
     <TextView
         android:id="@+id/text_compnay2"
-        android:layout_width="313dp"
-        android:layout_height="256dp"
-        android:text="Информация о компании"
+        android:layout_width="316dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Государственная корпорация по атомной энергии «Росатом» – многопрофильный холдинг, объединяющий активы в энергетике, машиностроении, строительстве. Его стратегия заключается в развитии низкоуглеродной генерации, включая ветроэнергетику. Госкорпорация «Росатом» является национальным лидером в производстве электроэнергии (около 20% от общей выработки) и занимает первое место в мире по величине портфеля заказов на сооружение АЭС: на разной стадии реализации находятся 34 энергоблока в 11 странах."
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="@+id/text_compnay"
-        app:layout_constraintEnd_toEndOf="@+id/text_compnay"
-        app:layout_constraintStart_toStartOf="@+id/text_compnay"
-        app:layout_constraintTop_toTopOf="@+id/text_compnay" />
+        android:textColor="#0B0000"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/gallery_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rosatom_logo" />
 
     <TextView
         android:id="@+id/gmail_addres"
@@ -107,37 +45,36 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/vkButton"
-        android:layout_width="70dp"
-        android:layout_height="62dp"
-        android:background="#00FFFFFF"
-        android:onClick="click_vk"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/gmailButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gmailButton"
-        app:layout_constraintTop_toTopOf="@+id/gmailButton"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/vk_logo" />
-
-    <ImageButton
         android:id="@+id/gallery_button"
-        android:layout_width="251dp"
-        android:layout_height="58dp"
-        android:background="#00FFFFFF"
+        android:layout_width="227dp"
+        android:layout_height="69dp"
+        android:backgroundTint="#00FFFFFF"
         android:onClick="click_gallery"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/gmailButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_compnay"
+        app:layout_constraintTop_toBottomOf="@+id/text_compnay2"
         app:srcCompat="@drawable/gallery_button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Перейти к альбому"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/gallery_button"
+        app:layout_constraintEnd_toEndOf="@+id/gallery_button"
+        app:layout_constraintStart_toStartOf="@+id/gallery_button"
+        app:layout_constraintTop_toTopOf="@+id/gallery_button" />
 
     <ImageButton
         android:id="@+id/gmailButton"
-        android:layout_width="70dp"
-        android:layout_height="62dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="34dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="56dp"
         android:background="#00FFFFFF"
@@ -146,12 +83,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vkButton"
         app:layout_constraintStart_toEndOf="@+id/telegaLogo"
-        app:srcCompat="@drawable/gmail_logo" />
+        app:layout_constraintTop_toBottomOf="@+id/gallery_button"
+        app:srcCompat="@drawable/meyl" />
 
     <ImageButton
         android:id="@+id/telegaLogo"
-        android:layout_width="65dp"
-        android:layout_height="62dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:onClick="click_telega"
         android:scaleType="centerCrop"
@@ -160,34 +98,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/gmailButton"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/telega_logo" />
+        app:srcCompat="@drawable/tg" />
+
+    <ImageButton
+        android:id="@+id/vkButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:onClick="click_vk"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/gmailButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gmailButton"
+        app:layout_constraintTop_toTopOf="@+id/gmailButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/vk" />
 
     <ImageView
         android:id="@+id/rosatom_logo"
-        android:layout_width="0dp"
-        android:layout_height="172dp"
-        android:layout_marginTop="22dp"
+        android:layout_width="411dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_compnay2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scroll_Gallery"
-        app:srcCompat="@drawable/rosatom_logo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logotip_rosatom" />
 
     <ImageButton
         android:id="@+id/back_Button"
         android:layout_width="62dp"
         android:layout_height="51dp"
 
-        android:background="@color/white"
-        android:backgroundTint="#00FAF9F9"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#00FBFBFB"
         android:onClick="click_back"
         android:scaleX="1.5"
         android:scaleY="1.5"
-        android:tint="#FDFDFD"
         android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="2dp" />
+        app:tint="#FDFDFD" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/scroll_Gallery"
@@ -213,30 +167,115 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="0dp"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/ros1"
                     android:layout_width="match_parent"
-                    android:layout_height="241dp"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/photo_rosatom" />
+                    android:layout_height="236dp"
+                    app:srcCompat="@drawable/rosatom1" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/ros2"
                     android:layout_width="match_parent"
-                    android:layout_height="308dp"
-                    app:srcCompat="@drawable/photo1_rosatom" />
+                    android:layout_height="245dp"
+                    app:srcCompat="@drawable/rosatom2" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/ros3"
                     android:layout_width="match_parent"
-                    android:layout_height="259dp"
-                    app:srcCompat="@drawable/photo2_rosatom" />
+                    android:layout_height="221dp"
+                    app:srcCompat="@drawable/rosatom3" />
 
+                <ImageView
+                    android:id="@+id/ros4"
+                    android:layout_width="match_parent"
+                    android:layout_height="266dp"
+                    app:srcCompat="@drawable/rosatom4" />
+
+                <ImageView
+                    android:id="@+id/ros5"
+                    android:layout_width="match_parent"
+                    android:layout_height="276dp"
+                    app:srcCompat="@drawable/rosatom5" />
+
+                <ImageView
+                    android:id="@+id/ros6"
+                    android:layout_width="match_parent"
+                    android:layout_height="292dp"
+                    app:srcCompat="@drawable/rosatom7" />
+
+                <ImageView
+                    android:id="@+id/ros7"
+                    android:layout_width="match_parent"
+                    android:layout_height="177dp"
+                    app:srcCompat="@drawable/rosatom6" />
             </LinearLayout>
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay"
+        android:layout_width="105dp"
+        android:layout_height="252dp"
+        android:background="#00000000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageButton
+            android:id="@+id/qw"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="52dp"
+            android:backgroundTint="#00FFFFFF"
+
+            android:onClick="replaceFragmentQ"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/group_113" />
+
+        <ImageButton
+            android:id="@+id/qw2"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00FFFFFF"
+
+            android:onClick="replaceFragmentA"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qw"
+            app:srcCompat="@drawable/group_122" />
+
+        <ImageButton
+            android:id="@+id/qw3"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qw2"
+            app:srcCompat="@drawable/group_121" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/perehod2"
+        android:layout_width="66dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="show"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/group_14" />
 </androidx.constraintlayout.widget.ConstraintLayout>

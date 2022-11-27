@@ -33,11 +33,7 @@ class MainActivity : AppCompatActivity(), QuizzAdapter.Listener {
             rsView.layoutManager = LinearLayoutManager(this@MainActivity)
             rsView.adapter = adapter
             for (i in imagemas.indices){
-                val quizz = Quizz(imagemas[i], "quizz $i",i+1)
-                adapter.addquizz(quizz)
-            }
-            for (i in imagemas.indices){
-                val quizz = Quizz(imagemas[i], "quizz $i",i+1)
+                val quizz = Quizz(imagemas[i], "Квиз $i",i+1)
                 adapter.addquizz(quizz)
             }
 
@@ -47,6 +43,7 @@ class MainActivity : AppCompatActivity(), QuizzAdapter.Listener {
     override fun onClick(quizz: Quizz) {
         val myIntent = Intent(this@MainActivity, Quizzes::class.java)
         myIntent.putExtra("key", "Квиз №"+quizz.id.toString()) //Optional parameters
+        myIntent.putExtra("key3", quizz.id.toString()) //Optional parameters
         this@MainActivity.startActivity(myIntent)
     }
 

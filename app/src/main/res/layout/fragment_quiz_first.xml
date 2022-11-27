@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D3D3D3"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,27 +12,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/picQ"
-            android:layout_width="412dp"
-            android:layout_height="292dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/texQ"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/Ques3"
-            android:layout_width="0dp"
-            android:layout_height="69dp"
-            android:layout_marginBottom="124dp"
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="116dp"
             android:background="@drawable/niz"
+            android:buttonTint="@color/white"
             android:onClick="Cheker"
             android:text="CheckBox"
             android:textColor="#ffffff"
-            android:buttonTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Ques4"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,20 +46,19 @@
 
         <CheckBox
             android:id="@+id/Ques2"
-            android:layout_width="0dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="2dp"
             android:background="@drawable/vverh"
+            android:buttonTint="@color/white"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:buttonTint="@color/white"
             android:textAlignment="viewStart"
             android:textColor="#ffffff"
-            app:layout_constraintBottom_toTopOf="@+id/Ques4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/Ques1"
-            app:layout_constraintTop_toBottomOf="@+id/texQ"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/texQ" />
 
         <TextView
             android:id="@+id/texQ"
@@ -61,48 +67,57 @@
             android:layout_marginBottom="184dp"
             android:text="TextView"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/picQ" />
 
-        <Button
+
+        <ImageButton
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="48dp"
+            android:layout_width="144dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="56dp"
+            android:background="#00FFFFFF"
             android:onClick="crate"
-            android:text="next"
-
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:srcCompat="@drawable/gradi" />
 
         <CheckBox
             android:id="@+id/Ques4"
-            android:layout_width="0dp"
-            android:layout_height="69dp"
-            android:layout_marginBottom="124dp"
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="116dp"
             android:background="@drawable/niz"
+            android:buttonTint="@color/white"
             android:onClick="Cheker"
             android:text="CheckBox"
             android:textColor="#ffffff"
-            android:buttonTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/Ques3" />
+            app:layout_constraintStart_toEndOf="@+id/Ques3"
+            app:layout_constraintTop_toBottomOf="@+id/Ques2" />
 
         <CheckBox
             android:id="@+id/Ques1"
-            android:layout_width="0dp"
-            android:layout_height="69dp"
-            android:layout_marginTop="18dp"
+            android:layout_width="188dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
             android:background="@drawable/vverh"
+            android:buttonTint="@color/white"
             android:onClick="Cheker"
             android:text="CheckBox"
-            android:buttonTint="@color/white"
             android:textAlignment="textStart"
             android:textColor="#ffffff"
             app:layout_constraintBottom_toTopOf="@+id/Ques3"
@@ -111,35 +126,219 @@
             app:layout_constraintTop_toBottomOf="@+id/texQ"
             app:layout_constraintVertical_bias="0.0" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="103dp"
+            android:layout_height="32dp"
+            android:text="Далее"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="@+id/button3"
+            app:layout_constraintStart_toStartOf="@+id/button3"
+            app:layout_constraintTop_toTopOf="@+id/button3" />
 
-    <ImageView
-        android:id="@+id/imageView228"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/background"
-        android:visibility="gone" />
+        <ImageView
+            android:id="@+id/imageView228"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/result"
-        android:layout_width="0dp"
-        android:layout_height="294dp"
+        android:layout_width="411dp"
+        android:layout_height="138dp"
+        android:layout_marginTop="432dp"
         android:text="TextView"
         android:textAlignment="center"
-        android:textSize="28sp"
+        android:textColor="#000000"
+        android:textSize="20sp"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageView
+
+        android:id="@+id/imageView3"
+        android:layout_width="387dp"
+        android:layout_height="343dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pngegg_1" />
+
+    <ImageButton
         android:id="@+id/load"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="255dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="56dp"
         android:onClick="Load"
+        android:scaleType="fitXY"
         android:text="Button"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/lay"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        app:srcCompat="@drawable/add_photo" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="198dp"
+        android:layout_height="29dp"
+        android:text="Продолжить"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/load"
+        app:layout_constraintEnd_toEndOf="@+id/load"
+        app:layout_constraintStart_toStartOf="@+id/load"
+        app:layout_constraintTop_toTopOf="@+id/load" />
+
+    <ImageButton
+        android:id="@+id/perehod3"
+        android:layout_width="66dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="show"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/group_14" />
+
+    <ImageButton
+        android:id="@+id/vkButton3"
+        android:layout_width="51dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="13dp"
+        android:background="#00FFFFFF"
+        android:onClick="click_vk"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/load"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/vk" />
+
+    <ImageButton
+        android:id="@+id/telegaLogo3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="76dp"
+        android:background="#00FFFFFF"
+        android:onClick="click_telega"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/load"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/tg" />
+
+    <ImageButton
+        android:id="@+id/adroid_app"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:onClick="click_andr"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vkButton3"
+        app:layout_constraintStart_toEndOf="@+id/telegaLogo3"
+        app:layout_constraintTop_toBottomOf="@+id/load"
+        app:layout_constraintVertical_bias="0.166"
+        app:srcCompat="@drawable/andr_app" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="340dp"
+        android:layout_height="370dp"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/editbox_dropdown_dark_frame" />
+
+    <EditText
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay2"
+        android:layout_width="105dp"
+        android:layout_height="252dp"
+        android:background="#00000000"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/qw"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="52dp"
+            android:backgroundTint="#00FFFFFF"
+
+            android:onClick="replaceFragmentQ"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/group_113" />
+
+        <ImageButton
+            android:id="@+id/qw2"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00FFFFFF"
+
+            android:onClick="replaceFragmentA"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qw"
+            app:srcCompat="@drawable/group_122" />
+
+        <ImageButton
+            android:id="@+id/qw3"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="replaceFragmentP"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qw2"
+            app:srcCompat="@drawable/group_121" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

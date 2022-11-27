@@ -13,14 +13,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="359dp"
-        android:layout_height="166dp"
+        android:layout_width="417dp"
+        android:layout_height="174dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
-        android:background="#4CAF50"
-        android:backgroundTint="#8BC34A"
+        android:background="#004CAF50"
+        android:backgroundTint="#008BC34A"
         android:backgroundTintMode="screen"
         android:scrollbarDefaultDelayBeforeFade="0"
         android:scrollbarFadeDuration="0"
@@ -31,10 +31,22 @@
         app:cardPreventCornerOverlap="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="7dp"
+            android:gravity="center"
+            android:text="43242342"
+            android:textColor="#000000"
+            android:textSize="33dp"
+            android:textStyle="bold"
+            app:cardElevation="0dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,24 +61,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="149dp"
-                android:layout_height="match_parent"
+                android:layout_width="397dp"
+                android:layout_height="201dp"
                 android:isScrollContainer="false"
                 app:cardElevation="0dp"
                 app:srcCompat="@drawable/quizz1" />
-
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="7dp"
-                android:gravity="center"
-                android:text="TextView"
-                android:textColor="#000000"
-                android:textSize="33dp"
-                android:textStyle="bold"
-                app:cardElevation="0dp" />
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

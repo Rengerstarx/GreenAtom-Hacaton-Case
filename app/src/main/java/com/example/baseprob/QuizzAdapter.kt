@@ -17,6 +17,7 @@ class QuizzAdapter(val listener: Listener):RecyclerView.Adapter<QuizzAdapter.Qui
         val binding = QuizzItemBinding.bind(item)
         fun bind(quizz: Quizz, listener: Listener) = with(binding){
             title.text = quizz.title
+            imageView.setImageResource(quizz.imageId)
             itemView.setOnClickListener{
                 listener.onClick(quizz)
             }

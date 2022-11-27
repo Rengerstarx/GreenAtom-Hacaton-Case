@@ -28,38 +28,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <ImageButton
             android:id="@+id/qw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="Квиз"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="52dp"
+            android:scaleType="centerCrop"
+            android:backgroundTint="#00FFFFFF"
 
-        <Button
-            android:id="@+id/Prof"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/group_113" />
+
+        <ImageButton
+            android:id="@+id/qw2"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
             android:onClick="replaceFragmentA"
-            android:text="Профиль"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/qw" />
+            android:scaleType="centerCrop"
+            android:backgroundTint="#00FFFFFF"
 
-        <Button
-            android:id="@+id/about"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="replaceFragmentP"
-            android:text="О нас"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Prof" />
+            app:layout_constraintTop_toBottomOf="@+id/qw"
+            app:srcCompat="@drawable/group_122"  />
+
+        <ImageButton
+            android:id="@+id/qw3"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            android:onClick="replaceFragmentP"
+            android:scaleType="centerCrop"
+            android:backgroundTint="#00FFFFFF"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qw2"
+            app:srcCompat="@drawable/group_121" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
